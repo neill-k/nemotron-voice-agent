@@ -39,7 +39,7 @@ The WebRTC UI is a React application built with Vite.
 
 **Key Features:**
 - **Real-time Audio Streaming**: Playback of audio from the WebRTC stream
-- **Voice Selection**: 
+- **Voice Selection**:
   - Default voice selection from available TTS voices
   - Custom voice prompt upload (for zero-shot TTS models)
 - **Transcripts Display**: Real-time conversation transcripts showing user and bot messages
