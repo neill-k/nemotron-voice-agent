@@ -16,14 +16,14 @@ The following table lists the evaluation and performance tooling:
 
 | Goal | Location | Documentation |
 | --- | --- | --- |
-| **Accuracy (BigBench)** | `nvidia-pipecat/tools/scripts/AA-BigBenchAudio-eval/` | [AA-BigBenchAudio-eval README](../nvidia-pipecat/tools/scripts/AA-BigBenchAudio-eval/README.md) |
-| **Latency & scalability** | `nvidia-pipecat/tests/perf/` | [Performance tests README](https://github.com/NVIDIA-AI-Blueprints/nemotron-voice-agent/blob/main/nvidia-pipecat/tests/perf/README.md) |
+| **Accuracy (BigBench)** | `nvidia-pipecat/tools/scripts/AA-BigBenchAudio-eval/` | [AA-BigBenchAudio-eval README](https://github.com/NVIDIA/voice-agent-examples/tree/main/tools/scripts/AA-BigBenchAudio-eval) |
+| **Latency & scalability** | `nvidia-pipecat/tests/perf/` | [Performance tests README](https://github.com/NVIDIA/voice-agent-examples/tree/main/tests/perf) |
 
 ---
 
 ## BigBench Audio Benchmarking
 
-BigBench Audio evaluates **answer correctness** on the [ArtificialAnalysis/big_bench_audio](https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio) dataset. For setup, prerequisites, and step-by-step instructions (speech-to-speech and text-inference pipelines), refer to the [AA-BigBenchAudio-eval README](../nvidia-pipecat/tools/scripts/AA-BigBenchAudio-eval/README.md).
+BigBench Audio evaluates **answer correctness** on the [ArtificialAnalysis/big_bench_audio](https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio) dataset. For setup, prerequisites, and step-by-step instructions (speech-to-speech and text-inference pipelines), refer to the [AA-BigBenchAudio-eval README](https://github.com/NVIDIA/voice-agent-examples/tree/main/tools/scripts/AA-BigBenchAudio-eval).
 
 ### Reference Results
 
@@ -40,7 +40,7 @@ The following table shows accuracy (%) on Big Bench Audio for text-only (standal
 
 ## Performance Tests
 
-The performance tests in `nvidia-pipecat/tests/perf/` measure latency and scalability (multi-client WebSocket benchmark, TTFB analysis, glitch and reverse barge-in detection). For prerequisites, how to run the multi-client benchmark and TTFB analyzer, and troubleshooting, refer to the [Performance tests README](../nvidia-pipecat/tests/perf/README.md).
+The performance tests in `nvidia-pipecat/tests/perf/` measure latency and scalability (multi-client WebSocket benchmark, TTFB analysis, glitch and reverse barge-in detection). For prerequisites, how to run the multi-client benchmark and TTFB analyzer, and troubleshooting, refer to the [Performance tests README](https://github.com/NVIDIA/voice-agent-examples/tree/main/tests/perf).
 
 ### Reference Results
 
