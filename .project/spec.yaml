@@ -29,8 +29,8 @@ layout:
 environment:
     base:
         registry: nvcr.io
-        image: nvidia/ai-workbench/python-basic:1.0.6
-        build_timestamp: "20250205043314"
+        image: nvidia/ai-workbench/python-basic:1.0.9
+        build_timestamp: "20260112183658"
         name: Python Basic
         supported_architectures: []
         cuda_version: ""
@@ -60,7 +60,7 @@ environment:
         programming_languages:
             - python3
         icon_url: https://workbench.download.nvidia.com/static/img/ai-workbench-icon-rectangle.jpg
-        image_version: 1.0.6
+        image_version: 1.0.9
         os: linux
         os_distro: ubuntu
         os_distro_release: "22.04"
@@ -84,7 +84,7 @@ environment:
             - name: pip
               binary_path: /usr/bin/pip
               installed_packages:
-                - jupyterlab==4.2.5
+                - jupyterlab==4.3.6
         package_manager_environment:
             name: ""
             target: ""
@@ -97,7 +97,7 @@ execution:
           start_command: docker compose up -d
           health_check_command: curl -f http://localhost:9000 || exit 1
           stop_command: docker compose down
-          user_msg: "Starts the full voice agent stack (ASR, TTS, LLM NIMs + app + UI). Requires NVIDIA_API_KEY secret."
+          user_msg: Starts the full voice agent stack (ASR, TTS, LLM NIMs + app + UI). Requires NVIDIA_API_KEY secret.
           logfile_path: ""
           timeout_seconds: 3599
           icon_url: ""
@@ -113,7 +113,7 @@ execution:
           start_command: docker compose up -d python-app
           health_check_command: curl -f http://localhost:7860/docs || exit 1
           stop_command: docker compose stop python-app
-          user_msg: "The Pipecat voice agent API endpoint."
+          user_msg: The Pipecat voice agent API endpoint.
           logfile_path: ""
           timeout_seconds: 3599
           icon_url: ""
@@ -129,7 +129,7 @@ execution:
         sharedMemoryMB: 16384
     secrets:
         - variable: NVIDIA_API_KEY
-          description: "NVIDIA API key for NGC / NIM services (from build.nvidia.com)"
+          description: NVIDIA API key for NGC / NIM services (from build.nvidia.com)
     mounts:
         - type: project
           target: /project/

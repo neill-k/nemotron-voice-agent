@@ -45,3 +45,55 @@ llm_cache/
 audio_dumps/
 
 webrtc_ui/node_modules/
+
+# Ignore generated or temporary files managed by the Workbench
+
+# General ignores
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# Temp directories, notebooks created by jupyterlab
+.ipynb_checkpoints
+.Trash-*/
+.jupyter/
+.local/
+
+# Python distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Workbench Project Layout
+data/scratch/*
+!data/scratch/.gitkeep
