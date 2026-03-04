@@ -1,3 +1,9 @@
+# AI Workbench
+.project/*
+!.project/spec.yaml
+!.project/configpacks
+.ansible
+
 .idea/
 result*
 .direnv/
