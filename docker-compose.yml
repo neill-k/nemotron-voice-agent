@@ -79,6 +79,11 @@ services:
       - path: .env
         required: false
     user: "0:0"
+    depends_on:
+      tts-service:
+        condition: service_healthy
+      asr-service:
+        condition: service_healthy
     environment:
       - NGC_API_KEY=${NVIDIA_API_KEY}
       - NIM_HTTP_API_PORT=8000
