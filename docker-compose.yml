@@ -76,7 +76,8 @@ services:
   nvidia-llm:
     image: ${NVIDIA_LLM_IMAGE:-nvcr.io/nim/nvidia/nemotron-3-nano:1.7.0-variant}
     env_file:
-      - .env
+      - path: .env
+        required: false
     user: "0:0"
     environment:
       - NGC_API_KEY=${NVIDIA_API_KEY}
@@ -129,7 +130,8 @@ services:
       - ./audio_dumps:/app/audio_dumps
       - ./config/:/app/config/
     env_file:
-      - .env
+      - path: .env
+        required: false
     environment:
       # Docker services endpoints
       - ASR_SERVER_URL=${ASR_SERVER_URL:-asr-service:50052}
@@ -167,7 +169,8 @@ services:
     ports:
       - "9000:8000"
     env_file:
-      - .env
+      - path: .env
+        required: false
 
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000', timeout=5).read()"]
