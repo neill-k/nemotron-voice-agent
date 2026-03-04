@@ -99,7 +99,7 @@ execution:
           stop_command: docker compose down
           user_msg: "Starts the full voice agent stack (ASR, TTS, LLM NIMs + app + UI). Requires NVIDIA_API_KEY secret."
           logfile_path: ""
-          timeout_seconds: 3600
+          timeout_seconds: 3599
           icon_url: ""
           webapp_options:
             autolaunch: true
@@ -115,7 +115,7 @@ execution:
           stop_command: docker compose stop python-app
           user_msg: "The Pipecat voice agent API endpoint."
           logfile_path: ""
-          timeout_seconds: 3600
+          timeout_seconds: 3599
           icon_url: ""
           webapp_options:
             autolaunch: false
