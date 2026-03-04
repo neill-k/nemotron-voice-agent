@@ -74,11 +74,16 @@ services:
         max-file: "5"
 
   nvidia-llm:
-    image: ${NVIDIA_LLM_IMAGE:-nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2:latest}
+    image: ${NVIDIA_LLM_IMAGE:-nvcr.io/nim/nvidia/nemotron-3-nano:1.7.0-variant}
     env_file:
       - path: .env
         required: false
     user: "0:0"
+    depends_on:
+      tts-service:
+        condition: service_healthy
+      asr-service:
+        condition: service_healthy
     environment:
       - NGC_API_KEY=${NVIDIA_API_KEY}
       - NIM_HTTP_API_PORT=8000
