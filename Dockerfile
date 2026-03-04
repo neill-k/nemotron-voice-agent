@@ -18,6 +18,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     libgl1 \
     libglx-mesa0 \
     curl \
+    git \
     libglib2.0-0 \
     python3.12 \
     python3.12-venv \
@@ -34,7 +35,10 @@ WORKDIR /app
 COPY pyproject.toml uv.lock ./
 COPY src ./src
 COPY config ./config
-COPY nvidia-pipecat ./nvidia-pipecat
+# Clone nvidia-pipecat submodule (avoids dependency on git submodule init)
+RUN git clone https://github.com/NVIDIA/voice-agent-examples nvidia-pipecat && \
+    cd nvidia-pipecat && git checkout 13ce52c836f60953bdd54aae57362da2d2569ef7 && \
+    rm -rf .git
 
 # Create legal directory and copy license files
 RUN mkdir -p /app/legal
