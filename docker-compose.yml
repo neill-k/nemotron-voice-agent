@@ -82,6 +82,7 @@ services:
     environment:
       - NGC_API_KEY=${NVIDIA_API_KEY}
       - NIM_HTTP_API_PORT=8000
+      - NIM_VLLM_GPU_MEMORY_UTILIZATION=${LLM_GPU_MEM_UTIL:-0.7}
     ports:
       - "18000:8000"
     ulimits:
